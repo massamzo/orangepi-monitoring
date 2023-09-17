@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Orangepi monitor</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../static/style.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <script src='../static/script.js'></script>
+
+</head>
+<body>
+    <div id="main">
+        <div id="ip_container">
+
+            <div class="ip">
+                <img src="../static/images/api.png">
+                <h2 id="localip">{{ ipAddr[0] }}</h2>
+            </div>
+
+
+            <div class="ip">
+                <img src="../static/images/globe.png" id="globe">
+                <h2 id="localip">{{ ipAddr[1] }}</h2>
+            </div>
+
+        </div>
+
+        <div id="rebooter">
+        <div>
+            <img src="../static/images/power-off.png" id="turnoff">
+            <img src="../static/images/reboot.png" id="restart">
+        </div>
+        </div>
+
+        <div id="data">
+            
+            <div class="data_container" >
+                <div class="content" id="temp_container">
+                    <img id="temp-img" src="..//static/images/thermometer.png">
+                    <h2>{{ temp }}°</h2>
+                </div>
+            </div>
+
+
+            <div class="data_container" >
+                <div class="content">
+                    <canvas id="memoryChart">
+
+                    </canvas>
+                </div>
+            </div>
+
+            <div class="data_container" >
+                <div class="content" id="disker">
+                    
+                    <div id="diskSpace">
+                        <h3>0</h3>
+                        <h3 id='usedSpace'></h3>
+                    </div>
+                    <div id="totalDisk">
+                        <div id="usedDisk"></div>
+                    </div>
+
+                    <div id="diskInfo">
+                        <div class="info">
+                            <div style="background:linear-gradient(45deg, #ba2d2d, #ba2d5c);"></div>
+                            <h3 id='usedInfo'>Used</h3>
+                        </div>
+
+                        <div class="info">
+                            <div style="background:linear-gradient(45deg, #1650cc, #34a0cf);" ></div>
+                            <h3 id="freeInfo">Free</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="root-pswd">
+        <div>
+            <h3>To <b id="keyAction">TURN OFF</b> the server insert the root password</h3>
+            <input type="password" name="rootpwsd" id="pass" required><br>
+            <button id="actioner">TURN OFF</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
